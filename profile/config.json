@@ -1,0 +1,23 @@
+{
+  "author": "LusoCryptoLabs",
+  "groups": [
+    { "title": "Fiber", "repos": ["nervosnetwork/fiber", "chenyukang/fiber"] },
+    { "title": "CCC", "repos": ["ckb-devrel/ccc"] }
+  ],
+  "other": "Other CKB projects",
+  "skip": [
+    "nervosnetwork/fiber-website#22",
+    "sporeprotocol/spore-site#31",
+    "gemwalletcom/wallet#1738",
+    "Nervos-Community-Catalyst/CKBuilder-projects#39",
+    "Alive24/ckb-developer-personas#4"
+  ],
+  "skipTitles": ["^\\[FR\\]"],
+  "after": {
+    "nervosnetwork/fiber#1718": "from our report [#1717](https://github.com/nervosnetwork/fiber/issues/1717)",
+    "ckb-devrel/ccc#575": "from [#548](https://github.com/ckb-devrel/ccc/issues/548)"
+  },
+  "notes": {
+    "Fiber": ["Findings on the LSP support pull request, [#1623](https://github.com/nervosnetwork/fiber/pull/1623)"]
+  }
+}
