@@ -2,6 +2,8 @@
 // search lists them (public data). Run each day by .github/workflows/update.yml. Locally:
 //   GITHUB_TOKEN=<token> node scripts/update.mjs          writes README.md
 //   node scripts/update.mjs --from <search items json>    the same from saved items
+// The page stays short however long the list grows: the totals on top, per project the newest
+// `latest` merged and open pull requests, the rest and the reports in closed sections.
 import { readFileSync, writeFileSync } from 'node:fs'
 
 const ROOT = new URL('..', import.meta.url)
@@ -28,9 +30,23 @@ const repoOf = (item) => item.repository_url.split('/').slice(-2).join('/')
 const keyOf = (item) => `${repoOf(item)}#${item.number}`
 const day = (iso) => iso.slice(0, 10)
 const escape = (s) => s.replace(/([\\[\]<>])/g, '\\$1')
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`
+
+/** A list, its newest `latest` items shown and the rest in a closed section. */
+function shortList(lines, latest, more) {
+  if (lines.length <= latest) return [...lines, '']
+  const rest = lines.slice(latest)
+  return [...lines.slice(0, latest), '', `<details><summary>${more(rest.length)}</summary>`, '', ...rest, '', '</details>', '']
+}
+
+/** A list kept in a closed section, its summary always shown. */
+function closedList(lines, summary) {
+  return [`<details><summary>${summary}</summary>`, '', ...lines, '', '</details>', '']
+}
 
 /** The README for these search items. */
 export function render(items, config, header) {
+  const latest = config.latest ?? 5
   const skipTitles = (config.skipTitles ?? []).map((s) => new RegExp(s))
   const kept = items.filter((i) => {
     if (repoOf(i).split('/')[0].toLowerCase() === config.author.toLowerCase()) return false
@@ -43,7 +59,13 @@ export function render(items, config, header) {
   const groups = [...config.groups.map((g) => ({ ...g, items: [] })), { title: config.other, repos: [], items: [] }]
   for (const i of kept) (groups.find((g) => g.repos.includes(repoOf(i))) ?? groups[groups.length - 1]).items.push(i)
 
+  const merged = kept.filter((i) => i.pull_request?.merged_at)
+  const openPrs = kept.filter((i) => i.pull_request && i.state === 'open')
+  const reports = kept.filter((i) => !i.pull_request)
+  const repos = new Set(merged.map(repoOf)).size
   const out = [header.trim(), '']
+  out.push(`So far: ${plural(merged.length, 'pull request', 'pull requests')} merged in ${plural(repos, 'repository', 'repositories')}, ${openPrs.length} open, and ${plural(reports.length, 'report', 'reports')}.`, '')
+
   for (const g of groups) {
     if (!g.items.length && !(config.notes ?? {})[g.title]) continue
     const main = g.repos[0]
@@ -53,13 +75,17 @@ export function render(items, config, header) {
       const after = (config.after ?? {})[keyOf(i)]
       return `- [${label(i)}](${i.html_url}) ${escape(i.title)} (${state})${after ? `, ${after}` : ''}`
     }
-    const merged = g.items.filter((i) => i.pull_request?.merged_at).sort((a, b) => b.pull_request.merged_at.localeCompare(a.pull_request.merged_at))
-    const open = g.items.filter((i) => i.pull_request && i.state === 'open')
-    const reports = g.items.filter((i) => !i.pull_request)
+    const gMerged = g.items.filter((i) => i.pull_request?.merged_at).sort((a, b) => b.pull_request.merged_at.localeCompare(a.pull_request.merged_at))
+    const gOpen = g.items.filter((i) => i.pull_request && i.state === 'open')
+    const gReports = g.items.filter((i) => !i.pull_request)
     const notes = (config.notes ?? {})[g.title] ?? []
-    if (merged.length) out.push('Merged:', '', ...merged.map((i) => line(i, `merged ${day(i.pull_request.merged_at)}`)), '')
-    if (open.length) out.push('Open:', '', ...open.map((i) => line(i, 'open')), '')
-    if (reports.length || notes.length) out.push('Reports:', '', ...reports.map((i) => line(i, i.state)), ...notes.map((n) => `- ${n}`), '')
+    if (gMerged.length) out.push('Merged:', '', ...shortList(gMerged.map((i) => line(i, `merged ${day(i.pull_request.merged_at)}`)), latest, (n) => `${n} more merged`))
+    if (gOpen.length) out.push('Open:', '', ...shortList(gOpen.map((i) => line(i, 'open')), latest, (n) => `${n} more open`))
+    if (gReports.length || notes.length) {
+      const stillOpen = gReports.filter((i) => i.state === 'open').length
+      const summary = gReports.length ? `${plural(gReports.length, 'report', 'reports')} (${stillOpen} open)` : 'Reports'
+      out.push(...closedList([...gReports.map((i) => line(i, i.state)), ...notes.map((n) => `- ${n}`)], summary))
+    }
   }
   const q = encodeURIComponent(`author:${config.author} -user:${config.author}`).replace(/%20/g, '+')
   out.push(`All of it, as GitHub lists it: [pull requests and issues by ${config.author}](https://github.com/search?q=${q}&type=issues).`, '')

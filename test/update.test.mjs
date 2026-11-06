@@ -1,10 +1,12 @@
-// The README's rules on saved search items: what is kept, where, in which order, how it reads.
+// The README's rules on saved search items: what is kept, where, in which order, how it reads, and
+// that it stays short however long the list grows.
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { render, search } from '../scripts/update.mjs'
 
 const config = {
   author: 'LusoCryptoLabs',
+  latest: 2,
   groups: [{ title: 'Fiber', repos: ['nervosnetwork/fiber', 'chenyukang/fiber'] }],
   other: 'Other CKB projects',
   skip: ['nervosnetwork/fiber-website#22'],
@@ -33,10 +35,12 @@ const items = [
   item('LusoCryptoLabs/cellula-ui', 17, 'feat: our own'),
 ]
 
-test('kept, grouped and ordered as the rules say', () => {
+test('kept, grouped, ordered and cut as the rules say', () => {
   const md = render(items, config, '## Header\n')
   assert.equal(md, [
     '## Header',
+    '',
+    'So far: 3 pull requests merged in 2 repositories, 1 open, and 2 reports.',
     '',
     '### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))',
     '',
@@ -44,13 +48,20 @@ test('kept, grouped and ordered as the rules say', () => {
     '',
     '- [#1707](https://github.com/nervosnetwork/fiber/pull/1707) fix: hold cells (merged 2026-11-05)',
     '- [#1718](https://github.com/nervosnetwork/fiber/pull/1718) fix: keep subscribers (merged 2026-11-03), from our report #1717',
+    '',
+    '<details><summary>1 more merged</summary>',
+    '',
     '- [chenyukang/fiber#9](https://github.com/chenyukang/fiber/pull/9) fix(lsp): look tenants up (merged 2026-11-01)',
     '',
-    'Reports:',
+    '</details>',
+    '',
+    '<details><summary>2 reports (1 open)</summary>',
     '',
     '- [#1724](https://github.com/nervosnetwork/fiber/issues/1724) Trampoline holds a \\<second\\> payment (open)',
     '- [#1717](https://github.com/nervosnetwork/fiber/issues/1717) Store change subscribers stop (closed)',
     '- Findings on #1623',
+    '',
+    '</details>',
     '',
     '### Other CKB projects',
     '',
@@ -70,6 +81,18 @@ test('control: without the rules, what they leave out shows', () => {
   // Closed without a merge and our own repositories stay out whatever the config.
   assert.doesNotMatch(md, /#1713/)
   assert.doesNotMatch(md, /cellula-ui/)
+})
+
+test('a hundred merged pull requests: five shown, the rest closed, the page stays short', () => {
+  const many = Array.from({ length: 100 }, (_, n) => item('nervosnetwork/fiber', 2000 + n, `fix: ${n}`, { pr: true, state: 'closed', merged: `2026-12-${String(1 + (n % 28)).padStart(2, '0')}T00:00:${String(n % 60).padStart(2, '0')}Z` }))
+  const md = render(many, { ...config, latest: 5 }, '')
+  const shown = md.split('<details>')[0]
+  assert.equal((shown.match(/^- \[/gm) ?? []).length, 5)
+  assert.match(md, /<details><summary>95 more merged<\/summary>/)
+  assert.match(md, /^So far: 100 pull requests merged in 1 repository, 0 open, and 0 reports\.$/m)
+  // Control: with no limit, all hundred are on the page.
+  const all = render(many, { ...config, latest: 1000 }, '')
+  assert.equal((all.match(/^- \[/gm) ?? []).length, 100)
 })
 
 test('search reads every page', async () => {
