@@ -4,6 +4,8 @@ We build on Nervos CKB: Cellula ([cellula.id](https://cellula.id)), a wallet wit
 and Fiber payments, and the hosted Fiber LSP behind it. What we find while running them goes back
 to the projects we build on.
 
+The list below updates itself each day from GitHub's public data.
+
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
 Merged:
