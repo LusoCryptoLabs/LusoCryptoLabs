@@ -6,6 +6,8 @@ to the projects we build on.
 
 The list below updates itself each day from GitHub's public data.
 
+So far: 11 pull requests merged in 5 repositories, 2 open, and 17 reports.
+
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
 Merged:
@@ -15,10 +17,15 @@ Merged:
 - [#1719](https://github.com/nervosnetwork/fiber/pull/1719) fix: build one CKB client for the watchtower round (merged 2026-11-03)
 - [chenyukang/fiber#9](https://github.com/chenyukang/fiber/pull/9) fix(lsp): look tenants up by key without reading them all (merged 2026-11-01)
 - [#1715](https://github.com/nervosnetwork/fiber/pull/1715) fix: replace secp placeholders when merging funding witnesses (merged 2026-10-29)
+
+<details><summary>2 more merged</summary>
+
 - [#1708](https://github.com/nervosnetwork/fiber/pull/1708) fix: fail a funding tx that conflicts with one in the pool (merged 2026-10-29)
 - [#1703](https://github.com/nervosnetwork/fiber/pull/1703) feat: add an option to sync store writes to disk (merged 2026-10-26)
 
-Reports:
+</details>
+
+<details><summary>5 reports (3 open)</summary>
 
 - [#1724](https://github.com/nervosnetwork/fiber/issues/1724) Trampoline holds a second payment of a paid invoice until expiry (open)
 - [#1722](https://github.com/nervosnetwork/fiber/issues/1722) Payer TLC timeout is replayed at every CheckChannels and fails a reused attempt (open)
@@ -26,6 +33,8 @@ Reports:
 - [#1717](https://github.com/nervosnetwork/fiber/issues/1717) Store change subscribers stop for good after a burst of 17 changes (closed)
 - [#1679](https://github.com/nervosnetwork/fiber/issues/1679) Hosted LSP (#1623): three findings from a testnet run (closed)
 - Findings on the LSP support pull request, [#1623](https://github.com/nervosnetwork/fiber/pull/1623)
+
+</details>
 
 ### CCC ([ckb-devrel/ccc](https://github.com/ckb-devrel/ccc))
 
@@ -38,13 +47,13 @@ Open:
 
 - [#596](https://github.com/ckb-devrel/ccc/pull/596) fix(core): verify JoyID signatures against the given key and message (open)
 
-Reports:
+<details><summary>3 reports (1 open)</summary>
 
 - [#613](https://github.com/ckb-devrel/ccc/issues/613) Verifying messages signed by a passkey smart-account wallet (closed)
 - [#595](https://github.com/ckb-devrel/ccc/issues/595) Drop @joyid/ckb: core and joy-id use two small helpers from it (open)
-- [#570](https://github.com/ckb-devrel/ccc/issues/570) Reusing a cell's `cellOutput` with larger data also grows that cell's input (closed)
 - [#548](https://github.com/ckb-devrel/ccc/issues/548) Let Address.fromString resolve human-readable names through a registered resolver (closed)
-- [#531](https://github.com/ckb-devrel/ccc/issues/531) JoyID mainnet cellDeps are all spent again (recurrence of #288); #277's fix still isn't in (closed)
+
+</details>
 
 ### Other CKB projects
 
@@ -57,7 +66,7 @@ Open:
 
 - [docs.nervos.org#966](https://github.com/nervosnetwork/docs.nervos.org/pull/966) docs: add known pitfalls to the script testing guide (open)
 
-Reports:
+<details><summary>9 reports (5 open)</summary>
 
 - [spore-contract#77](https://github.com/sporeprotocol/spore-contract/issues/77) Testnet Spore and Cluster code cells are under the dev chain's published key (open)
 - [ckb-light-client#303](https://github.com/nervosnetwork/ckb-light-client/issues/303) Publish a release with the June and August fixes (open)
@@ -68,5 +77,7 @@ Reports:
 - [html-jukebox#1](https://github.com/toastmanAu/html-jukebox/issues/1) PROTOCOL_REPAIR: step 14 accepts a spliced append history (each backlink declares a prefix checksum) (closed)
 - [ckbfs#3](https://github.com/code-tsao/ckbfs/issues/3) Measured v3 publish limits, prefix-checksum verification, and whether ckbfs:// is normative (closed)
 - [Spool-Queue#1](https://github.com/pferreira-builds/Spool-Queue/issues/1) Optional JSON file persistence via File System Access API (closed)
+
+</details>
 
 All of it, as GitHub lists it: [pull requests and issues by LusoCryptoLabs](https://github.com/search?q=author%3ALusoCryptoLabs+-user%3ALusoCryptoLabs&type=issues).

@@ -1,5 +1,6 @@
 {
   "author": "LusoCryptoLabs",
+  "latest": 5,
   "groups": [
     { "title": "Fiber", "repos": ["nervosnetwork/fiber", "chenyukang/fiber"] },
     { "title": "CCC", "repos": ["ckb-devrel/ccc"] }
@@ -10,7 +11,9 @@
     "sporeprotocol/spore-site#31",
     "gemwalletcom/wallet#1738",
     "Nervos-Community-Catalyst/CKBuilder-projects#39",
-    "Alive24/ckb-developer-personas#4"
+    "Alive24/ckb-developer-personas#4",
+    "ckb-devrel/ccc#531",
+    "ckb-devrel/ccc#570"
   ],
   "skipTitles": ["^\\[FR\\]"],
   "after": {
