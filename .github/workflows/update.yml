@@ -1,0 +1,41 @@
+name: update
+
+# Each day, README.md from GitHub's public list of our pull requests and issues in other projects
+# (scripts/update.mjs). It runs on GitHub's runners; it pushes with a deploy key of this repository
+# only (secret PROFILE_DEPLOY_KEY), which the main ruleset lets through. No pull request can start it.
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  readme:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ssh-key: ${{ secrets.PROFILE_DEPLOY_KEY }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node scripts/update.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: commit what changed
+        run: |
+          if git diff --quiet README.md; then
+            echo "README.md unchanged"
+            exit 0
+          fi
+          git config user.name tecmeup123
+          git config user.email 207697742+tecmeup123@users.noreply.github.com
+          git commit -m "docs: refresh the contributions" README.md
+          git push origin HEAD:main
