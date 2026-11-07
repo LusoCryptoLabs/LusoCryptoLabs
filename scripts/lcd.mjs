@@ -118,6 +118,18 @@ export function lcd() {
     for (const [x, y] of cells(SMALL[ch])) line.push(rect(nameCol + i * 4 + x, 31 + y, ` class="t" style="animation-delay:${s(LINE_AT + (i + 1) * LINE_STEP)}"`))
   })
 
+  // A small figure in a white hat, in the clear band at the upper left: the security reviewer.
+  // Its hat is the one white mark on the screen, as the middle logo dot is the one red. It turns
+  // on last, after the red dot, like a signature.
+  const figure = []
+  const figCol = 2
+  const figRow = 6
+  const HAT = ['..#####..', '.#######.', '#########']
+  const BODY = ['...###...', '..#####..', '..#####..', '...###...', '.#######.', '.#######.', '.#######.', '..#...#..', '..#...#..']
+  const figAt = RED_AT + 0.25
+  for (const [x, y] of cells(HAT)) figure.push(rect(figCol + x, figRow + y, ` class="wh" style="animation-delay:${s(figAt)}"`))
+  for (const [x, y] of cells(BODY)) figure.push(rect(figCol + x, figRow + 3 + y, ` class="t" style="animation-delay:${s(figAt + 0.08)}"`))
+
   const travel = NAME.length * 6 * PITCH
   const glowX = px(dots[1] + 3) + PIX / 2
   const glowY = py(11) + PIX / 2
@@ -127,6 +139,7 @@ export function lcd() {
   out.push(`<style>
 .px{fill:#1d2915}
 .t{opacity:0;animation:on 1ms linear forwards}
+.wh{fill:#f4f2e6;opacity:0;animation:on 1ms linear forwards}
 .f{animation:fly .45s steps(4,end) both}
 .rd{animation-name:fly,red;animation-duration:.45s,1ms;animation-timing-function:steps(4,end),linear;animation-fill-mode:both,forwards}
 .lit{animation:lit .3s steps(3,end) ${s(0.05)} both}
@@ -141,8 +154,8 @@ export function lcd() {
 @keyframes mv{from{transform:none}to{transform:translateX(${travel}px)}}
 @keyframes bl{50%{opacity:0}}
 @media (prefers-reduced-motion:reduce){
-.t,.f,.rd,.lit,.glow,.cur,.mv,.bl{animation:none}
-.t,.glow,.cur{opacity:1}.lit{opacity:0}.rd{fill:#e10600}.mv{transform:translateX(${travel}px)}
+.t,.f,.rd,.lit,.glow,.cur,.mv,.bl,.wh{animation:none}
+.t,.glow,.cur,.wh{opacity:1}.lit{opacity:0}.rd{fill:#e10600}.mv{transform:translateX(${travel}px)}
 }
 </style>`)
   out.push(`<defs>
@@ -157,7 +170,7 @@ export function lcd() {
   out.push(`<rect x="${PAD}" y="${PAD}" width="${COLS * PITCH}" height="${ROWS * PITCH}" fill="url(#grid)" opacity=".55"/>`)
   out.push(`<circle class="glow" cx="${glowX}" cy="${glowY}" r="30" fill="#e10600" fill-opacity=".45" filter="url(#blur)"/>`)
   out.push(`<g class="px">`)
-  out.push(...status, ...logo, ...name, ...line)
+  out.push(...status, ...logo, ...name, ...line, ...figure)
   out.push(`<g class="cur"><g class="mv"><g class="bl">${cursor.join('')}</g></g></g>`)
   out.push('</g>')
   out.push(`<rect class="lit" x="${PAD - 10}" y="${PAD - 10}" width="${COLS * PITCH + 19}" height="${ROWS * PITCH + 19}" rx="10" fill="#1d2915"/>`)
