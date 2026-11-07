@@ -6,7 +6,7 @@ to the projects we build on.
 
 The list below updates itself each day from GitHub's public data.
 
-So far: 11 pull requests merged in 5 repositories, 2 open, and 17 reports.
+So far: 11 pull requests merged in 5 repositories, 3 open, and 19 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -64,10 +64,13 @@ Merged:
 
 Open:
 
+- [ckb-explorer-frontend#2143](https://github.com/nervosnetwork/ckb-explorer-frontend/pull/2143) fix: point the cells scripts at their upgraded deployments (open)
 - [docs.nervos.org#966](https://github.com/nervosnetwork/docs.nervos.org/pull/966) docs: add known pitfalls to the script testing guide (open)
 
-<details><summary>9 reports (5 open)</summary>
+<details><summary>11 reports (7 open)</summary>
 
+- [ckb-proxy-locks#8](https://github.com/ckb-devrel/ckb-proxy-locks/issues/8) docs: document the integrator hazards of output-type-proxy-lock and the delegation semantics (open)
+- [omnilock#12](https://github.com/nervosnetwork/omnilock/issues/12) ACP payment into two cells of one owner fails with -3 (open)
 - [spore-contract#77](https://github.com/sporeprotocol/spore-contract/issues/77) Testnet Spore and Cluster code cells are under the dev chain's published key (open)
 - [ckb-light-client#303](https://github.com/nervosnetwork/ckb-light-client/issues/303) Publish a release with the June and August fixes (open)
 - [fluxo#10](https://github.com/Freakah/fluxo/issues/10) CI: npm audit fails on zod 4.6.5 (open)
