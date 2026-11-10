@@ -6,7 +6,7 @@ to the projects we build on.
 
 The list below updates itself each day from GitHub's public data.
 
-So far: 11 pull requests merged in 5 repositories, 3 open, and 19 reports.
+So far: 11 pull requests merged in 5 repositories, 5 open, and 19 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -24,6 +24,11 @@ Merged:
 - [#1703](https://github.com/nervosnetwork/fiber/pull/1703) feat: add an option to sync store writes to disk (merged 2026-10-26)
 
 </details>
+
+Open:
+
+- [#1735](https://github.com/nervosnetwork/fiber/pull/1735) fix: do not log a missing payment session after a dry run (open)
+- [#1734](https://github.com/nervosnetwork/fiber/pull/1734) fix: log TLC rejections only when a TLC is rejected (open)
 
 <details><summary>5 reports (3 open)</summary>
 
