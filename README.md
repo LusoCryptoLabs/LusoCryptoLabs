@@ -6,29 +6,26 @@ to the projects we build on.
 
 The list below updates itself each day from GitHub's public data.
 
-So far: 11 pull requests merged in 5 repositories, 5 open, and 19 reports.
+So far: 13 pull requests merged in 5 repositories, 3 open, and 19 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
 Merged:
 
+- [#1734](https://github.com/nervosnetwork/fiber/pull/1734) fix: log TLC rejections only when a TLC is rejected (merged 2026-11-11)
+- [#1735](https://github.com/nervosnetwork/fiber/pull/1735) fix: do not log a missing payment session after a dry run (merged 2026-11-10)
 - [#1707](https://github.com/nervosnetwork/fiber/pull/1707) fix: hold cells across funding and the watchtower (merged 2026-11-05)
 - [#1718](https://github.com/nervosnetwork/fiber/pull/1718) fix: keep store change subscribers through a burst (merged 2026-11-03), from our report [#1717](https://github.com/nervosnetwork/fiber/issues/1717)
 - [#1719](https://github.com/nervosnetwork/fiber/pull/1719) fix: build one CKB client for the watchtower round (merged 2026-11-03)
+
+<details><summary>4 more merged</summary>
+
 - [chenyukang/fiber#9](https://github.com/chenyukang/fiber/pull/9) fix(lsp): look tenants up by key without reading them all (merged 2026-11-01)
 - [#1715](https://github.com/nervosnetwork/fiber/pull/1715) fix: replace secp placeholders when merging funding witnesses (merged 2026-10-29)
-
-<details><summary>2 more merged</summary>
-
 - [#1708](https://github.com/nervosnetwork/fiber/pull/1708) fix: fail a funding tx that conflicts with one in the pool (merged 2026-10-29)
 - [#1703](https://github.com/nervosnetwork/fiber/pull/1703) feat: add an option to sync store writes to disk (merged 2026-10-26)
 
 </details>
-
-Open:
-
-- [#1735](https://github.com/nervosnetwork/fiber/pull/1735) fix: do not log a missing payment session after a dry run (open)
-- [#1734](https://github.com/nervosnetwork/fiber/pull/1734) fix: log TLC rejections only when a TLC is rejected (open)
 
 <details><summary>5 reports (3 open)</summary>
 
