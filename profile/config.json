@@ -20,6 +20,14 @@
     "nervosnetwork/fiber#1718": "from our report [#1717](https://github.com/nervosnetwork/fiber/issues/1717)",
     "ckb-devrel/ccc#575": "from [#548](https://github.com/ckb-devrel/ccc/issues/548)"
   },
+  "talk": {
+    "base": "https://talk.nervos.org",
+    "accounts": { "LusoCryptoLabs": "all", "T_Silva": [11142, 10862, 10493, 10411, 9650], "InkHaven": [10387, 10304, 10275, 10087] },
+    "skip": [10450, 11048, 10457, 10967]
+  },
+  "npm": { "maintainer": "tecmeup", "skip": [] },
+  "pitfalls": "LusoCryptoLabs/ckb-script-pitfalls",
+  "repoSkip": [".github", "LusoCryptoLabs", "telmodasilva-qa", "course-lint", "curriculum-pipeline"],
   "notes": {
     "Fiber": ["Findings on the LSP support pull request, [#1623](https://github.com/nervosnetwork/fiber/pull/1623)"]
   }
