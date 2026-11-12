@@ -6,7 +6,17 @@ to the projects we build on.
 
 The list below updates itself each day from GitHub's public data.
 
-So far: 13 pull requests merged in 5 repositories, 3 open, and 19 reports.
+### Writing
+
+- [Private payments in Cellula Wallet, on testnet](https://talk.nervos.org/t/private-payments-in-cellula-wallet-on-testnet/11207) (2026-11-12)
+- [Swap book: trade CKB for USDC, ETH or Bitcoin with no custodian (testnet)](https://talk.nervos.org/t/swap-book-trade-ckb-for-usdc-eth-or-bitcoin-with-no-custodian-testnet/11164) (2026-11-10)
+- [Ward: lock proof for CKB](https://talk.nervos.org/t/ward-lock-proof-for-ckb/11153) (2026-11-09)
+- [Spark Program | ckb-adversary: generic attacks on real CKB transactions, before you deploy](https://talk.nervos.org/t/spark-program-ckb-adversary-generic-attacks-on-real-ckb-transactions-before-you-deploy/11142) (2026-11-07)
+- [Let any wallet bind its Nervos DAO deposit on Metaforo](https://talk.nervos.org/t/let-any-wallet-bind-its-nervos-dao-deposit-on-metaforo/11130) (2026-11-04)
+
+All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
+
+So far: 13 pull requests merged in 5 repositories, 5 open, and 19 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -66,6 +76,8 @@ Merged:
 
 Open:
 
+- [twine#2](https://github.com/chukwuma619/twine/pull/2) feat(fiber): pay invoices with a trampoline route hint (open)
+- [triptych#117](https://github.com/tari-project/triptych/pull/117) fix: increase weight entropy for parallel proofs (open)
 - [ckb-explorer-frontend#2143](https://github.com/nervosnetwork/ckb-explorer-frontend/pull/2143) fix: point the cells scripts at their upgraded deployments (open)
 - [docs.nervos.org#966](https://github.com/nervosnetwork/docs.nervos.org/pull/966) docs: add known pitfalls to the script testing guide (open)
 

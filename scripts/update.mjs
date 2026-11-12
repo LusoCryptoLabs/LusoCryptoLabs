@@ -4,6 +4,8 @@
 //   node scripts/update.mjs --from <search items json>    the same from saved items
 // The page stays short however long the list grows: the totals on top, per project the newest
 // `latest` merged and open pull requests, the rest and the reports in closed sections.
+// Above them, the newest articles our accounts started on Nervos Talk (config `talk`, the same keys
+// lcl-activity reads for the record page on lusocryptolabs.com).
 import { readFileSync, writeFileSync } from 'node:fs'
 
 const ROOT = new URL('..', import.meta.url)
@@ -32,6 +34,46 @@ const day = (iso) => iso.slice(0, 10)
 const escape = (s) => s.replace(/([\\[\]<>])/g, '\\$1')
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`
 
+const DASHES = [String.fromCharCode(0x2014), String.fromCharCode(0x2013)]
+/** Our house style has no long dashes: one between words becomes a colon. */
+export const clean = (t) => DASHES.reduce((x, d) => x.split(' ' + d + ' ').join(': ').split(d).join(': '), t.trim())
+
+/** The topics our accounts started, as config `talk` names them: every topic of an account set to "all", else the ids listed. */
+export function articles(topicsByUser, talk = {}) {
+  const base = (talk.base ?? 'https://talk.nervos.org').replace(/[/]$/, '')
+  const skip = new Set(talk.skip ?? [])
+  const out = []
+  for (const [user, which] of Object.entries(talk.accounts ?? {})) {
+    for (const t of topicsByUser[user] ?? []) {
+      if (skip.has(t.id) || (which !== 'all' && !which.includes(t.id))) continue
+      out.push({ date: day(t.created_at), title: clean(t.title), url: `${base}/t/${t.slug}/${t.id}` })
+    }
+  }
+  return out.sort((a, b) => b.date.localeCompare(a.date))
+}
+
+/** Every topic each account in config `talk` started, page by page. */
+export async function topics(talk = {}, getJson = (url) => fetch(url, { headers: { accept: 'application/json', 'user-agent': 'lusocryptolabs-profile' } }).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`${url}: ${r.status}`))))) {
+  const base = (talk.base ?? 'https://talk.nervos.org').replace(/[/]$/, '')
+  const byUser = {}
+  for (const user of Object.keys(talk.accounts ?? {})) {
+    byUser[user] = []
+    for (let page = 0; page < 10; page++) {
+      const body = await getJson(`${base}/topics/created-by/${encodeURIComponent(user)}.json?page=${page}`)
+      byUser[user].push(...body.topic_list.topics)
+      if (!body.topic_list.more_topics_url) break
+    }
+  }
+  return byUser
+}
+
+/** The Writing section: the newest `latest` articles and the record page with all of it. */
+export function writing(list, latest, record) {
+  if (!list.length) return []
+  return ['### Writing', '', ...list.slice(0, latest).map((a) => `- [${escape(a.title)}](${a.url}) (${a.date})`), '',
+    `All of it, with our research and packages: [${record.replace(/^https:[/][/]/, '')}](${record}).`, '']
+}
+
 /** A list, its newest `latest` items shown and the rest in a closed section. */
 function shortList(lines, latest, more) {
   if (lines.length <= latest) return [...lines, '']
@@ -45,7 +87,7 @@ function closedList(lines, summary) {
 }
 
 /** The README for these search items. */
-export function render(items, config, header) {
+export function render(items, config, header, articleList = []) {
   const latest = config.latest ?? 5
   const skipTitles = (config.skipTitles ?? []).map((s) => new RegExp(s))
   const kept = items.filter((i) => {
@@ -64,6 +106,7 @@ export function render(items, config, header) {
   const reports = kept.filter((i) => !i.pull_request)
   const repos = new Set(merged.map(repoOf)).size
   const out = [header.trim(), '']
+  out.push(...writing(articleList, latest, config.record ?? 'https://lusocryptolabs.com/record.html'))
   out.push(`So far: ${plural(merged.length, 'pull request', 'pull requests')} merged in ${plural(repos, 'repository', 'repositories')}, ${openPrs.length} open, and ${plural(reports.length, 'report', 'reports')}.`, '')
 
   for (const g of groups) {
@@ -97,6 +140,20 @@ if (import.meta.url === new URL(process.argv[1], 'file:').href || process.argv[1
   const header = readFileSync(new URL('profile/header.md', ROOT), 'utf8')
   const from = process.argv.indexOf('--from')
   const items = from > 0 ? JSON.parse(readFileSync(process.argv[from + 1], 'utf8')) : await search(`author:${config.author} -user:${config.author}`, process.env.GITHUB_TOKEN)
-  writeFileSync(new URL('README.md', ROOT), render(items, config, header))
+  // The forum down keeps yesterday's Writing section rather than dropping it.
+  let list = null
+  try {
+    list = articles(await topics(config.talk), config.talk)
+  } catch (e) {
+    console.error(`Nervos Talk: ${e.message}; keeping the Writing section as it was`)
+  }
+  let md = render(items, config, header, list ?? [])
+  if (list === null) {
+    const prev = readFileSync(new URL('README.md', ROOT), 'utf8')
+    const start = prev.indexOf('### Writing')
+    const end = prev.indexOf('So far:')
+    if (start >= 0 && end > start) md = md.replace('So far:', prev.slice(start, end) + 'So far:')
+  }
+  writeFileSync(new URL('README.md', ROOT), md)
   console.log(`README.md: ${items.length} items read`)
 }
