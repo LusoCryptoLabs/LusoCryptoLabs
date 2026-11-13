@@ -16,20 +16,22 @@ The list below updates itself each day from GitHub's public data.
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 13 pull requests merged in 5 repositories, 5 open, and 19 reports.
+So far: 16 pull requests merged in 6 repositories, 4 open, and 19 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
 Merged:
 
+- [#1744](https://github.com/nervosnetwork/fiber/pull/1744) fix: do not settle upstream TLCs on a closed channel (merged 2026-11-12)
+- [#1743](https://github.com/nervosnetwork/fiber/pull/1743) test: read the block timestamp of a block of its own (merged 2026-11-12)
 - [#1734](https://github.com/nervosnetwork/fiber/pull/1734) fix: log TLC rejections only when a TLC is rejected (merged 2026-11-11)
 - [#1735](https://github.com/nervosnetwork/fiber/pull/1735) fix: do not log a missing payment session after a dry run (merged 2026-11-10)
 - [#1707](https://github.com/nervosnetwork/fiber/pull/1707) fix: hold cells across funding and the watchtower (merged 2026-11-05)
+
+<details><summary>6 more merged</summary>
+
 - [#1718](https://github.com/nervosnetwork/fiber/pull/1718) fix: keep store change subscribers through a burst (merged 2026-11-03), from our report [#1717](https://github.com/nervosnetwork/fiber/issues/1717)
 - [#1719](https://github.com/nervosnetwork/fiber/pull/1719) fix: build one CKB client for the watchtower round (merged 2026-11-03)
-
-<details><summary>4 more merged</summary>
-
 - [chenyukang/fiber#9](https://github.com/chenyukang/fiber/pull/9) fix(lsp): look tenants up by key without reading them all (merged 2026-11-01)
 - [#1715](https://github.com/nervosnetwork/fiber/pull/1715) fix: replace secp placeholders when merging funding witnesses (merged 2026-10-29)
 - [#1708](https://github.com/nervosnetwork/fiber/pull/1708) fix: fail a funding tx that conflicts with one in the pool (merged 2026-10-29)
@@ -71,12 +73,12 @@ Open:
 
 Merged:
 
+- [twine#2](https://github.com/chukwuma619/twine/pull/2) feat(fiber): pay invoices with a trampoline route hint (merged 2026-11-13)
 - [ckbdapps#7](https://github.com/CKBFansDAO/ckbdapps/pull/7) content: Cellula.id links, contracts and Dev Tools (merged 2026-10-29)
 - [CrowdCell#10](https://github.com/alesfer001/CrowdCell/pull/10) feat: show .cell names for creators and backers (merged 2026-10-13)
 
 Open:
 
-- [twine#2](https://github.com/chukwuma619/twine/pull/2) feat(fiber): pay invoices with a trampoline route hint (open)
 - [triptych#117](https://github.com/tari-project/triptych/pull/117) fix: increase weight entropy for parallel proofs (open)
 - [ckb-explorer-frontend#2143](https://github.com/nervosnetwork/ckb-explorer-frontend/pull/2143) fix: point the cells scripts at their upgraded deployments (open)
 - [docs.nervos.org#966](https://github.com/nervosnetwork/docs.nervos.org/pull/966) docs: add known pitfalls to the script testing guide (open)
