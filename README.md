@@ -8,15 +8,15 @@ The list below updates itself each day from GitHub's public data.
 
 ### Writing
 
+- [A second post-quantum lock for CKB? ML-DSA beside SPHINCS+, checked and measured](https://talk.nervos.org/t/a-second-post-quantum-lock-for-ckb-ml-dsa-beside-sphincs-checked-and-measured/11217) (2026-11-15)
 - [Private payments in Cellula Wallet, on testnet](https://talk.nervos.org/t/private-payments-in-cellula-wallet-on-testnet/11207) (2026-11-12)
 - [Swap book: trade CKB for USDC, ETH or Bitcoin with no custodian (testnet)](https://talk.nervos.org/t/swap-book-trade-ckb-for-usdc-eth-or-bitcoin-with-no-custodian-testnet/11164) (2026-11-10)
 - [Ward: lock proof for CKB](https://talk.nervos.org/t/ward-lock-proof-for-ckb/11153) (2026-11-09)
 - [Spark Program | ckb-adversary: generic attacks on real CKB transactions, before you deploy](https://talk.nervos.org/t/spark-program-ckb-adversary-generic-attacks-on-real-ckb-transactions-before-you-deploy/11142) (2026-11-07)
-- [Let any wallet bind its Nervos DAO deposit on Metaforo](https://talk.nervos.org/t/let-any-wallet-bind-its-nervos-dao-deposit-on-metaforo/11130) (2026-11-04)
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 16 pull requests merged in 6 repositories, 4 open, and 19 reports.
+So far: 16 pull requests merged in 6 repositories, 3 open, and 19 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -56,10 +56,6 @@ Merged:
 
 - [#575](https://github.com/ckb-devrel/ccc/pull/575) feat(core): add addressResolver to ClientConfig (merged 2026-09-26), from [#548](https://github.com/ckb-devrel/ccc/issues/548)
 - [#540](https://github.com/ckb-devrel/ccc/pull/540) docs(core): say that a dep with a type id ignores its configured outpoint (merged 2026-09-18)
-
-Open:
-
-- [#596](https://github.com/ckb-devrel/ccc/pull/596) fix(core): verify JoyID signatures against the given key and message (open)
 
 <details><summary>3 reports (1 open)</summary>
 
