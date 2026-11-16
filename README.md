@@ -16,7 +16,7 @@ The list below updates itself each day from GitHub's public data.
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 16 pull requests merged in 6 repositories, 3 open, and 19 reports.
+So far: 16 pull requests merged in 6 repositories, 3 open, and 20 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -79,8 +79,9 @@ Open:
 - [ckb-explorer-frontend#2143](https://github.com/nervosnetwork/ckb-explorer-frontend/pull/2143) fix: point the cells scripts at their upgraded deployments (open)
 - [docs.nervos.org#966](https://github.com/nervosnetwork/docs.nervos.org/pull/966) docs: add known pitfalls to the script testing guide (open)
 
-<details><summary>11 reports (7 open)</summary>
+<details><summary>12 reports (8 open)</summary>
 
+- [ckb-vm-js#3](https://github.com/Hanssen0-Alter-Ego/ckb-vm-js/issues/3) Publish to npm? (open)
 - [ckb-proxy-locks#8](https://github.com/ckb-devrel/ckb-proxy-locks/issues/8) docs: document the integrator hazards of output-type-proxy-lock and the delegation semantics (open)
 - [omnilock#12](https://github.com/nervosnetwork/omnilock/issues/12) ACP payment into two cells of one owner fails with -3 (open)
 - [spore-contract#77](https://github.com/sporeprotocol/spore-contract/issues/77) Testnet Spore and Cluster code cells are under the dev chain's published key (open)
