@@ -8,11 +8,11 @@ The list below updates itself each day from GitHub's public data.
 
 ### Writing
 
+- [Community Fund DAO voting in numbers](https://talk.nervos.org/t/community-fund-dao-voting-in-numbers/11246) (2026-11-17)
 - [A second post-quantum lock for CKB? ML-DSA beside SPHINCS+, checked and measured](https://talk.nervos.org/t/a-second-post-quantum-lock-for-ckb-ml-dsa-beside-sphincs-checked-and-measured/11217) (2026-11-15)
 - [Private payments in Cellula Wallet, on testnet](https://talk.nervos.org/t/private-payments-in-cellula-wallet-on-testnet/11207) (2026-11-12)
 - [Swap book: trade CKB for USDC, ETH or Bitcoin with no custodian (testnet)](https://talk.nervos.org/t/swap-book-trade-ckb-for-usdc-eth-or-bitcoin-with-no-custodian-testnet/11164) (2026-11-10)
 - [Ward: lock proof for CKB](https://talk.nervos.org/t/ward-lock-proof-for-ckb/11153) (2026-11-09)
-- [Spark Program | ckb-adversary: generic attacks on real CKB transactions, before you deploy](https://talk.nervos.org/t/spark-program-ckb-adversary-generic-attacks-on-real-ckb-transactions-before-you-deploy/11142) (2026-11-07)
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
@@ -79,9 +79,9 @@ Open:
 - [ckb-explorer-frontend#2143](https://github.com/nervosnetwork/ckb-explorer-frontend/pull/2143) fix: point the cells scripts at their upgraded deployments (open)
 - [docs.nervos.org#966](https://github.com/nervosnetwork/docs.nervos.org/pull/966) docs: add known pitfalls to the script testing guide (open)
 
-<details><summary>12 reports (8 open)</summary>
+<details><summary>12 reports (7 open)</summary>
 
-- [ckb-vm-js#3](https://github.com/Hanssen0-Alter-Ego/ckb-vm-js/issues/3) Publish to npm? (open)
+- [ckb-vm-js#3](https://github.com/Hanssen0-Alter-Ego/ckb-vm-js/issues/3) Publish to npm? (closed)
 - [ckb-proxy-locks#8](https://github.com/ckb-devrel/ckb-proxy-locks/issues/8) docs: document the integrator hazards of output-type-proxy-lock and the delegation semantics (open)
 - [omnilock#12](https://github.com/nervosnetwork/omnilock/issues/12) ACP payment into two cells of one owner fails with -3 (open)
 - [spore-contract#77](https://github.com/sporeprotocol/spore-contract/issues/77) Testnet Spore and Cluster code cells are under the dev chain's published key (open)
