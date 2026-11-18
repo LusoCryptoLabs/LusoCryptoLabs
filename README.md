@@ -16,7 +16,7 @@ The list below updates itself each day from GitHub's public data.
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 16 pull requests merged in 6 repositories, 3 open, and 20 reports.
+So far: 16 pull requests merged in 6 repositories, 4 open, and 20 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -56,6 +56,10 @@ Merged:
 
 - [#575](https://github.com/ckb-devrel/ccc/pull/575) feat(core): add addressResolver to ClientConfig (merged 2026-09-26), from [#548](https://github.com/ckb-devrel/ccc/issues/548)
 - [#540](https://github.com/ckb-devrel/ccc/pull/540) docs(core): say that a dep with a type id ignores its configured outpoint (merged 2026-09-18)
+
+Open:
+
+- [#641](https://github.com/ckb-devrel/ccc/pull/641) feat(core): carry pseudo input cells over signer json-rpc (open)
 
 <details><summary>3 reports (1 open)</summary>
 
