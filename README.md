@@ -8,15 +8,15 @@ The list below updates itself each day from GitHub's public data.
 
 ### Writing
 
+- [RFC draft: Lock Proof, proving control of a CKB lock](https://talk.nervos.org/t/rfc-draft-lock-proof-proving-control-of-a-ckb-lock/11260) (2026-11-19)
 - [Community Fund DAO voting in numbers](https://talk.nervos.org/t/community-fund-dao-voting-in-numbers/11246) (2026-11-17)
 - [A second post-quantum lock for CKB? ML-DSA beside SPHINCS+, checked and measured](https://talk.nervos.org/t/a-second-post-quantum-lock-for-ckb-ml-dsa-beside-sphincs-checked-and-measured/11217) (2026-11-15)
 - [Private payments in Cellula Wallet, on testnet](https://talk.nervos.org/t/private-payments-in-cellula-wallet-on-testnet/11207) (2026-11-12)
 - [Swap book: trade CKB for USDC, ETH or Bitcoin with no custodian (testnet)](https://talk.nervos.org/t/swap-book-trade-ckb-for-usdc-eth-or-bitcoin-with-no-custodian-testnet/11164) (2026-11-10)
-- [Ward: lock proof for CKB](https://talk.nervos.org/t/ward-lock-proof-for-ckb/11153) (2026-11-09)
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 16 pull requests merged in 6 repositories, 4 open, and 20 reports.
+So far: 17 pull requests merged in 6 repositories, 3 open, and 20 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -54,12 +54,9 @@ Merged:
 
 Merged:
 
+- [#641](https://github.com/ckb-devrel/ccc/pull/641) feat(core): rebuild pseudo input cells over signer json-rpc (merged 2026-11-18)
 - [#575](https://github.com/ckb-devrel/ccc/pull/575) feat(core): add addressResolver to ClientConfig (merged 2026-09-26), from [#548](https://github.com/ckb-devrel/ccc/issues/548)
 - [#540](https://github.com/ckb-devrel/ccc/pull/540) docs(core): say that a dep with a type id ignores its configured outpoint (merged 2026-09-18)
-
-Open:
-
-- [#641](https://github.com/ckb-devrel/ccc/pull/641) feat(core): carry pseudo input cells over signer json-rpc (open)
 
 <details><summary>3 reports (1 open)</summary>
 
