@@ -9,10 +9,10 @@ The list below updates itself each day from GitHub's public data.
 ### Writing
 
 - [RFC draft: Lock Proof, proving control of a CKB lock](https://talk.nervos.org/t/rfc-draft-lock-proof-proving-control-of-a-ckb-lock/11260) (2026-11-19)
+- [CKB Pulse today: a new look, lessons from real fixes, and CKB inside your tools](https://talk.nervos.org/t/ckb-pulse-today-a-new-look-lessons-from-real-fixes-and-ckb-inside-your-tools/11268) (2026-11-19)
 - [Community Fund DAO voting in numbers](https://talk.nervos.org/t/community-fund-dao-voting-in-numbers/11246) (2026-11-17)
 - [A second post-quantum lock for CKB? ML-DSA beside SPHINCS+, checked and measured](https://talk.nervos.org/t/a-second-post-quantum-lock-for-ckb-ml-dsa-beside-sphincs-checked-and-measured/11217) (2026-11-15)
 - [Private payments in Cellula Wallet, on testnet](https://talk.nervos.org/t/private-payments-in-cellula-wallet-on-testnet/11207) (2026-11-12)
-- [Swap book: trade CKB for USDC, ETH or Bitcoin with no custodian (testnet)](https://talk.nervos.org/t/swap-book-trade-ckb-for-usdc-eth-or-bitcoin-with-no-custodian-testnet/11164) (2026-11-10)
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
