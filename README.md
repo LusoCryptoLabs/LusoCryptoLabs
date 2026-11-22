@@ -16,7 +16,7 @@ The list below updates itself each day from GitHub's public data.
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 17 pull requests merged in 6 repositories, 3 open, and 20 reports.
+So far: 17 pull requests merged in 6 repositories, 4 open, and 20 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -38,6 +38,10 @@ Merged:
 - [#1703](https://github.com/nervosnetwork/fiber/pull/1703) feat: add an option to sync store writes to disk (merged 2026-10-26)
 
 </details>
+
+Open:
+
+- [chenyukang/fiber#12](https://github.com/chenyukang/fiber/pull/12) perf(channel): index pending TLC payment hashes (open)
 
 <details><summary>5 reports (3 open)</summary>
 
