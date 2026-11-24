@@ -1,8 +1,10 @@
 <a href="https://lusocryptolabs.com"><img src="profile/lcd.svg" width="720" alt="LusoCryptoLabs"></a>
 
-We build on Nervos CKB: Cellula ([cellula.id](https://cellula.id)), a wallet with `.cell` names
-and Fiber payments, and the hosted Fiber LSP behind it. What we find while running them goes back
-to the projects we build on.
+We build on Nervos CKB and we review the contracts the ecosystem runs on.
+
+We make Cellula ([cellula.id](https://cellula.id)), a wallet with `.cell` names and Fiber payments, and the hosted Fiber LSP behind it. From running real products on CKB we built an adversarial engine that attacks a deployed script with its own bytes, and we use it to find flaws in the contracts people trust with funds. What we find goes to the maintainers first, under coordinated disclosure; the classes we confirm become public write-ups in [ckb-script-pitfalls](https://github.com/LusoCryptoLabs/ckb-script-pitfalls). The contributions below are the record.
+
+For a security review or a disclosure: hello@lusocryptolabs.com
 
 The list below updates itself each day from GitHub's public data.
 
@@ -16,7 +18,7 @@ The list below updates itself each day from GitHub's public data.
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 17 pull requests merged in 6 repositories, 4 open, and 20 reports.
+So far: 17 pull requests merged in 6 repositories, 6 open, and 20 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
@@ -41,6 +43,8 @@ Merged:
 
 Open:
 
+- [chenyukang/fiber#14](https://github.com/chenyukang/fiber/pull/14) fix(watchtower): claim a small tlc with the own share (open)
+- [chenyukang/fiber#13](https://github.com/chenyukang/fiber/pull/13) fix(ckb): keep the lsp's own inputs when a funding tx is replaced (open)
 - [chenyukang/fiber#12](https://github.com/chenyukang/fiber/pull/12) perf(channel): index pending TLC payment hashes (open)
 
 <details><summary>5 reports (3 open)</summary>
