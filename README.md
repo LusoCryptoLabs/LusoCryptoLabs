@@ -47,9 +47,9 @@ Open:
 - [chenyukang/fiber#13](https://github.com/chenyukang/fiber/pull/13) fix(ckb): keep the lsp's own inputs when a funding tx is replaced (open)
 - [chenyukang/fiber#12](https://github.com/chenyukang/fiber/pull/12) perf(channel): index pending TLC payment hashes (open)
 
-<details><summary>5 reports (3 open)</summary>
+<details><summary>5 reports (2 open)</summary>
 
-- [#1724](https://github.com/nervosnetwork/fiber/issues/1724) Trampoline holds a second payment of a paid invoice until expiry (open)
+- [#1724](https://github.com/nervosnetwork/fiber/issues/1724) Trampoline holds a second payment of a paid invoice until expiry (closed)
 - [#1722](https://github.com/nervosnetwork/fiber/issues/1722) Payer TLC timeout is replayed at every CheckChannels and fails a reused attempt (open)
 - [#1720](https://github.com/nervosnetwork/fiber/issues/1720) has_pending_tlc_for_payment_hash reads every channel state when the hash is not in the current channel (open)
 - [#1717](https://github.com/nervosnetwork/fiber/issues/1717) Store change subscribers stop for good after a burst of 17 changes (closed)
