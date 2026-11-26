@@ -18,20 +18,21 @@ The list below updates itself each day from GitHub's public data.
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 17 pull requests merged in 6 repositories, 6 open, and 20 reports.
+So far: 18 pull requests merged in 6 repositories, 5 open, and 20 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
 Merged:
 
+- [#1787](https://github.com/nervosnetwork/fiber/pull/1787) perf(channel): index pending TLC payment hashes (merged 2026-11-26)
 - [#1744](https://github.com/nervosnetwork/fiber/pull/1744) fix: do not settle upstream TLCs on a closed channel (merged 2026-11-12)
 - [#1743](https://github.com/nervosnetwork/fiber/pull/1743) test: read the block timestamp of a block of its own (merged 2026-11-12)
 - [#1734](https://github.com/nervosnetwork/fiber/pull/1734) fix: log TLC rejections only when a TLC is rejected (merged 2026-11-11)
 - [#1735](https://github.com/nervosnetwork/fiber/pull/1735) fix: do not log a missing payment session after a dry run (merged 2026-11-10)
+
+<details><summary>7 more merged</summary>
+
 - [#1707](https://github.com/nervosnetwork/fiber/pull/1707) fix: hold cells across funding and the watchtower (merged 2026-11-05)
-
-<details><summary>6 more merged</summary>
-
 - [#1718](https://github.com/nervosnetwork/fiber/pull/1718) fix: keep store change subscribers through a burst (merged 2026-11-03), from our report [#1717](https://github.com/nervosnetwork/fiber/issues/1717)
 - [#1719](https://github.com/nervosnetwork/fiber/pull/1719) fix: build one CKB client for the watchtower round (merged 2026-11-03)
 - [chenyukang/fiber#9](https://github.com/chenyukang/fiber/pull/9) fix(lsp): look tenants up by key without reading them all (merged 2026-11-01)
@@ -45,13 +46,12 @@ Open:
 
 - [chenyukang/fiber#14](https://github.com/chenyukang/fiber/pull/14) fix(watchtower): claim a small tlc with the own share (open)
 - [chenyukang/fiber#13](https://github.com/chenyukang/fiber/pull/13) fix(ckb): keep the lsp's own inputs when a funding tx is replaced (open)
-- [chenyukang/fiber#12](https://github.com/chenyukang/fiber/pull/12) perf(channel): index pending TLC payment hashes (open)
 
-<details><summary>5 reports (2 open)</summary>
+<details><summary>5 reports (1 open)</summary>
 
 - [#1724](https://github.com/nervosnetwork/fiber/issues/1724) Trampoline holds a second payment of a paid invoice until expiry (closed)
 - [#1722](https://github.com/nervosnetwork/fiber/issues/1722) Payer TLC timeout is replayed at every CheckChannels and fails a reused attempt (open)
-- [#1720](https://github.com/nervosnetwork/fiber/issues/1720) has_pending_tlc_for_payment_hash reads every channel state when the hash is not in the current channel (open)
+- [#1720](https://github.com/nervosnetwork/fiber/issues/1720) has_pending_tlc_for_payment_hash reads every channel state when the hash is not in the current channel (closed)
 - [#1717](https://github.com/nervosnetwork/fiber/issues/1717) Store change subscribers stop for good after a burst of 17 changes (closed)
 - [#1679](https://github.com/nervosnetwork/fiber/issues/1679) Hosted LSP (#1623): three findings from a testnet run (closed)
 - Findings on the LSP support pull request, [#1623](https://github.com/nervosnetwork/fiber/pull/1623)
@@ -88,12 +88,12 @@ Open:
 - [ckb-explorer-frontend#2143](https://github.com/nervosnetwork/ckb-explorer-frontend/pull/2143) fix: point the cells scripts at their upgraded deployments (open)
 - [docs.nervos.org#966](https://github.com/nervosnetwork/docs.nervos.org/pull/966) docs: add known pitfalls to the script testing guide (open)
 
-<details><summary>12 reports (7 open)</summary>
+<details><summary>12 reports (6 open)</summary>
 
 - [ckb-vm-js#3](https://github.com/Hanssen0-Alter-Ego/ckb-vm-js/issues/3) Publish to npm? (closed)
 - [ckb-proxy-locks#8](https://github.com/ckb-devrel/ckb-proxy-locks/issues/8) docs: document the integrator hazards of output-type-proxy-lock and the delegation semantics (open)
 - [omnilock#12](https://github.com/nervosnetwork/omnilock/issues/12) ACP payment into two cells of one owner fails with -3 (open)
-- [spore-contract#77](https://github.com/sporeprotocol/spore-contract/issues/77) Testnet Spore and Cluster code cells are under the dev chain's published key (open)
+- [spore-contract#77](https://github.com/sporeprotocol/spore-contract/issues/77) Testnet Spore and Cluster code cells are under the dev chain's published key (closed)
 - [ckb-light-client#303](https://github.com/nervosnetwork/ckb-light-client/issues/303) Publish a release with the June and August fixes (open)
 - [fluxo#10](https://github.com/Freakah/fluxo/issues/10) CI: npm audit fails on zod 4.6.5 (open)
 - [fluxo#9](https://github.com/Freakah/fluxo/issues/9) Deleting one bank's data resets recurring items of every bank (open)
