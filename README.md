@@ -10,28 +10,29 @@ The list below updates itself each day from GitHub's public data.
 
 ### Writing
 
-- [RFC draft: Lock Proof, proving control of a CKB lock](https://talk.nervos.org/t/rfc-draft-lock-proof-proving-control-of-a-ckb-lock/11260) (2026-11-19)
 - [CKB Pulse today: a new look, lessons from real fixes, and CKB inside your tools](https://talk.nervos.org/t/ckb-pulse-today-a-new-look-lessons-from-real-fixes-and-ckb-inside-your-tools/11268) (2026-11-19)
+- [RFC draft: Lock Proof, proving control of a CKB lock](https://talk.nervos.org/t/rfc-draft-lock-proof-proving-control-of-a-ckb-lock/11260) (2026-11-19)
 - [Community Fund DAO voting in numbers](https://talk.nervos.org/t/community-fund-dao-voting-in-numbers/11246) (2026-11-17)
 - [A second post-quantum lock for CKB? ML-DSA beside SPHINCS+, checked and measured](https://talk.nervos.org/t/a-second-post-quantum-lock-for-ckb-ml-dsa-beside-sphincs-checked-and-measured/11217) (2026-11-15)
 - [Private payments in Cellula Wallet, on testnet](https://talk.nervos.org/t/private-payments-in-cellula-wallet-on-testnet/11207) (2026-11-12)
 
 All of it, with our research and packages: [lusocryptolabs.com/record.html](https://lusocryptolabs.com/record.html).
 
-So far: 18 pull requests merged in 6 repositories, 5 open, and 20 reports.
+So far: 19 pull requests merged in 6 repositories, 5 open, and 20 reports.
 
 ### Fiber ([nervosnetwork/fiber](https://github.com/nervosnetwork/fiber))
 
 Merged:
 
+- [#1795](https://github.com/nervosnetwork/fiber/pull/1795) fix(channel): stop replaying announcement signatures once ready (merged 2026-11-27)
 - [#1787](https://github.com/nervosnetwork/fiber/pull/1787) perf(channel): index pending TLC payment hashes (merged 2026-11-26)
 - [#1744](https://github.com/nervosnetwork/fiber/pull/1744) fix: do not settle upstream TLCs on a closed channel (merged 2026-11-12)
 - [#1743](https://github.com/nervosnetwork/fiber/pull/1743) test: read the block timestamp of a block of its own (merged 2026-11-12)
 - [#1734](https://github.com/nervosnetwork/fiber/pull/1734) fix: log TLC rejections only when a TLC is rejected (merged 2026-11-11)
+
+<details><summary>8 more merged</summary>
+
 - [#1735](https://github.com/nervosnetwork/fiber/pull/1735) fix: do not log a missing payment session after a dry run (merged 2026-11-10)
-
-<details><summary>7 more merged</summary>
-
 - [#1707](https://github.com/nervosnetwork/fiber/pull/1707) fix: hold cells across funding and the watchtower (merged 2026-11-05)
 - [#1718](https://github.com/nervosnetwork/fiber/pull/1718) fix: keep store change subscribers through a burst (merged 2026-11-03), from our report [#1717](https://github.com/nervosnetwork/fiber/issues/1717)
 - [#1719](https://github.com/nervosnetwork/fiber/pull/1719) fix: build one CKB client for the watchtower round (merged 2026-11-03)
